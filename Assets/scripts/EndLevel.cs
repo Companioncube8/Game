@@ -10,6 +10,8 @@ public class EndLevel : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            generate generate_ = GameObject.Find("Player").GetComponent<generate>();
+            generate_.level_up();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

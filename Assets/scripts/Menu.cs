@@ -18,6 +18,8 @@ public class Menu : MonoBehaviour {
     
     public void restart ()
     {
+        generate generate_ = GameObject.Find("Player").GetComponent<generate>();
+        generate_.level_restart();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

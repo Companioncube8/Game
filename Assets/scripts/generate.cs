@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class generate : MonoBehaviour {
 
 	public Vector2 vectorX = new Vector2(7, 9);
     public Vector2 scale_size = new Vector2(0, 8);
     public Vector2 vectorY = new Vector2(-3, -7);
-    public int count = 10;
+    public static int count = 3;
     public GameObject Sprite_Prefub;
     public GameObject[] New_sprires;
     [SerializeField] public GameObject end;
+    [SerializeField] private Text level;
 
     private void Start()
     {
+        level.text = ("LEVEL: " + (count - 2));
         New_sprires = new GameObject[count];
         Generate();
     }
@@ -40,5 +43,13 @@ public class generate : MonoBehaviour {
         }
     }
 
-	
+    public void  level_up()
+    {
+        count++;
+    }
+
+    public void level_restart()
+    {
+        count = 3;
+    }
 }
